@@ -4,6 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var grabbed = false
+var start = Vector2(0,0)
 var offset = Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,12 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (grabbed):
+		if (start.distance_to(position) > 50):
+			scale = Vector2(1,1)
+		else:
+			scale = Vector2(0.5,0.5)
 		var mpos = get_viewport().get_mouse_position()
 		position = mpos+offset
+		
+		
 #	pass

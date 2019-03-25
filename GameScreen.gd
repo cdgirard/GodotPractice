@@ -29,6 +29,8 @@ func _ready():
 func grabbed_block(gpos,offset):
 	drag.position = gpos
 	drag.offset = offset
+	drag.scale = Vector2(0.5,0.5)
+	drag.start = Vector2(gpos.x,gpos.y)
 	drag.grabbed = true
 	drag.show()
 
